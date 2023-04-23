@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>correct</title>
+
+    <style>
+
+        body{
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #background{
+            width: 100%;
+            height: 100%;
+        }
+        #startBtn{
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -40%);
+            z-index: 100;
+            border: 0;
+            border-radius: 12px;
+            color: #c0c0c0;
+            cursor: pointer;
+            display: inline-block;
+            font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 2.5;
+            outline: transparent;
+            padding: 0 1rem;
+            text-align: center;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            box-shadow: 0 0 5px 1px #000000;
+            transition: background 0.5s ease;
+        }
+
+
+
+
+        #startBtn{
+            background: linear-gradient(270deg, #2c0542, #612a08);
+            background-size: 400% 400%;
+
+            -webkit-animation: AnimationName1 3s ease infinite;
+            -moz-animation: AnimationName2 3s ease infinite;
+            -o-animation: AnimationName3 3s ease infinite;
+            animation: AnimationName4 3s ease infinite;
+        }
+
+        @-webkit-keyframes AnimationName1 {
+            0%{background-position:9% 50%}
+            50%{background-position:92% 50%}
+            100%{background-position:9% 50%}
+        }
+        @-moz-keyframes AnimationName2 {
+            0%{background-position:9% 50%}
+            50%{background-position:92% 50%}
+            100%{background-position:9% 50%}
+        }
+        @-o-keyframes AnimationName3 {
+            0%{background-position:9% 50%}
+            50%{background-position:92% 50%}
+            100%{background-position:9% 50%}
+        }
+        @keyframes AnimationName4 {
+            0%{background-position:9% 50%}
+            50%{background-position:92% 50%}
+            100%{background-position:9% 50%}
+        }
+        #startBtn:hover{
+            animation-play-state: paused;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <div id="ripple" style="height: 70rem; 
+     background: url('trippy.gif') left top / cover;">
+        <button id="startBtn" onclick="/*link to webpage*/">Get started</button>
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+
+    <script src='https://cdn.jsdelivr.net/npm/jquery.ripples@0.6.3/dist/jquery.ripples.min.js'></script>
+
+    <script>
+
+        const startBtn = document.getElementById('startBtn');
+
+        startBtn.addEventListener('mouseover', function() {
+            startBtn.classList.add('paused');
+        });
+
+        $('#ripple').ripples({
+            resolution: 512,
+            dropRadius: 20,
+            perturbance: 0.04,
+        });
+
+    </script>
+
+</body>
+</html>
